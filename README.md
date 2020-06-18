@@ -7,7 +7,7 @@ You can play clicking [here]()
 ## INSTRUCTIONS
 Use your spacebar and avoid getting mad!
 Hope you enjoy!
-## BUILT BY
+## BUILT WITH ❤️ BY
 
 [Elena Sánchez](https://www.linkedin.com/in/elena-sanchez-l1994)
 
