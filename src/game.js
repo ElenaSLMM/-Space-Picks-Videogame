@@ -34,7 +34,7 @@ const Game = {
         picks: []
     },
     score: undefined,
-
+    gameOn: false,
     explotionFrame : 0,
 
 
@@ -52,16 +52,19 @@ const Game = {
     },
 
     start() {
-        this.music.levelSound.play()
-        this.music.levelSound.volume = 0.1
-        this.interval = setInterval(() =>{
-            this.clearScreen()
-            this.draw()
-            this.detectCollisions()
-            this.removeObstacles()
-            this.victory()
+        if(!this.gameOn){
+            this.music.levelSound.play()
+            this.music.levelSound.volume = 0.1
+            this.interval = setInterval(() =>{
+                this.clearScreen()
+                this.draw()
+                this.detectCollisions()
+                this.removeObstacles()
+                this.victory()
 
-        },1000 / this.fps)
+            },1000 / this.fps)
+            this.gameOn = true
+        }
     },
     
     setDimensions(){
@@ -317,6 +320,7 @@ const Game = {
             victoryScreen.style.display = 'block'
             document.addEventListener('keydown', e =>{
                 if (e.keyCode == 82){
+                    this.gameOn = false
                     location.reload()  
                 }
             })
@@ -336,6 +340,7 @@ const Game = {
         document.addEventListener('keydown', e =>{
             if (e.keyCode == 82){
                 location.reload()  
+                this.gameOn = false
             }
         })
         return true
