@@ -68,7 +68,7 @@ class Triangle extends Obstacles {
 
         this.obstacleDimensions = { // PROPIEDADES PARA COLISIONES PROPIOS DE LA CLASE
             w: 8,
-            h: 0
+            h: 17
         }
 
 
